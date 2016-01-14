@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 read -p "Attention, ce script installe les dépendances dans tout le système. Il n'est donc pas conseillé de l'utiliser sur votre propre machine. Continuer ? [O/n]" yn
 if [ "$yn" == "n" -o "$yn" == "N" ]; then

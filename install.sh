@@ -1,8 +1,12 @@
 #!/bin/sh
 
 read -p "Attention, ce script installe les dépendances dans tout le système. Il n'est donc pas conseillé de l'utiliser sur votre propre machine. Continuer ? [O/n]" yn
-if [ "$yn" == "n" -o "$yn" == "N" ]
-then
+if [ "$yn" == "n" -o "$yn" == "N" ]; then
+  exit
+fi
+
+if [ "$1" == "" ]; then
+  echo "Merci de préciser un dépôt à installer."
   exit
 fi
 

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd ~/workspace/zds-site
+npm run gulp build
 python manage.py migrate
 python manage.py runserver $IP:$PORT
 

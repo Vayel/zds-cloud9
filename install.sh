@@ -19,3 +19,11 @@ cd ~/workspace
 git clone "$1"
 cd ~/workspace/zds-site
 git remote add upstream https://github.com/zestedesavoir/zds-site
+
+# Libs back
+
+cat requirements.txt | grep -v "#" | grep -v "lxml" | xargs pip install --upgrade
+pip install --upgrade -r requirements-dev.txt
+CFLAGS="-O0" pip install --upgrade lxml==3.4.4
+
+# Libs front

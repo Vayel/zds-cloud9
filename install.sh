@@ -18,3 +18,4 @@ sudo npm install -g npm
 cd ~/workspace
 git clone "$1"
 cd zds-site
+git remote add upstream https://github.com/zestedesavoir/zds-site

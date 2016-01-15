@@ -30,15 +30,17 @@ git clone "$1"
 cd ~/workspace/zds-site
 git remote add upstream https://github.com/zestedesavoir/zds-site
 
+# Virtualenv
+
+pip install --user virtualenv
+virtualenv zdsenv --python=python2
+source zdsenv/bin/activate
+
 # Libs back
 
-touch requirements.log
-touch requirements-dev.log
-touch lxml.log
-
-sudo cat requirements.txt | grep -v "#" | grep -v "lxml" | xargs pip install --upgrade > requirements.log
-sudo pip install --upgrade -r requirements-dev.txt > requirements-dev.log
-sudo CFLAGS="-O0" pip install --upgrade lxml==3.4.4 > lxml.log
+cat requirements.txt | grep -v "#" | grep -v "lxml" | xargs pip install --upgrade
+pip install --upgrade -r requirements-dev.txt
+CFLAGS="-O0" pip install --upgrade lxml==3.4.4
 
 # Libs front
 

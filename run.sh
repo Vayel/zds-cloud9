@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd ~/workspace/zds-site
+source zdsenv/bin/activate
 npm run gulp build
 python manage.py migrate
 python manage.py runserver $IP:$PORT
